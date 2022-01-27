@@ -1,0 +1,100 @@
+@import url(./vendor/normalize.css);
+
+.page-wrapper {
+	background-color: black;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.header__title {
+	color: red;
+}
+.calc__screen {
+	grid-area: screen;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+.calc__delete {
+	grid-area: delete;
+}
+.calc__backskape {
+	grid-area: backskape;
+}
+.calc__divide {
+	grid-area: divide;
+}
+.calc__seven {
+	grid-area: seven;
+}
+.calc__eight {
+	grid-area: eight;
+}
+.calc__nine {
+	grid-area: nine;
+}
+.calc__multi {
+	grid-area: multi;
+}
+.calc__four {
+	grid-area: four;
+}
+.calc__five {
+	grid-area: five;
+}
+.calc__six {
+	grid-area: six;
+}
+.calc__minus {
+	grid-area: minus;
+}
+.calc__one {
+	grid-area: one;
+}
+.calc__two {
+	grid-area: two;
+}
+.calc__three {
+	grid-area: three;
+}
+.calc__plus {
+	grid-area: plus;
+}
+.calc__zero {
+	grid-area: zero;
+}
+.calc__equal {
+	grid-area: equal;
+	background-color: coral;
+	color: white;
+}
+.calc {
+	background-color: wheat;
+	height: 400px;
+	width: 320px;
+	display: grid;
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	border-radius: 10px;
+
+	grid-template-areas: "screen screen screen screen" "delete delete backskape divide" "seven eight nine multi"
+		"four five six minus" "one two three plus" "zero zero zero equal";
+}
+
+button {
+	height: 67px;
+	font-size: 40px;
+	border: 1.5px solid black;
+	border-radius: 10px;
+}
+button:nth-child(4n) {
+	background-color: coral;
+	color: white;
+}
+.calc__inputs {
+	font-size: 40px;
+}
