@@ -2,7 +2,9 @@
 
 const numsBtn = document.querySelectorAll('.btn');
 const calcInputs = document.querySelector('.calc__inputs');
-const cleanScreenBtn = document.querySelector('.calc__delete')
+const cleanScreenBtn = document.querySelector('.calc__delete');
+const resultImg = document.querySelector('.giphy-embed')
+
 
 let operator = '';
 let counter = 0
@@ -89,7 +91,11 @@ function handleDivideOperation() {
     counter = 0;
 
 }
-document.querySelector('.calc__equal').addEventListener('click', handleDivideOperation)
+document.querySelector('.calc__equal').addEventListener('click', () => {
+    handleDivideOperation()
+    resultImg.classList.add('giphy-embed_is-visible')
+
+})
 
 
 
