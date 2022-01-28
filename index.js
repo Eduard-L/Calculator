@@ -4,6 +4,8 @@ const numsBtn = document.querySelectorAll('.btn');
 const calcInputs = document.querySelector('.calc__inputs');
 const cleanScreenBtn = document.querySelector('.calc__delete');
 const resultImg = document.querySelector('.giphy-embed')
+const sideInputScreen = document.querySelector('.calc__screen-for-allinputs');
+const equalBtn = document.querySelector('.calc__equal');
 
 
 let operator = '';
@@ -21,6 +23,7 @@ function cleanScreen() {
 
 }
 function resetTheCalculator() {
+    sideInputScreen.textContent = ''
     cleanScreen();
     operator = '';
     counter = 0
@@ -32,7 +35,10 @@ function resetTheCalculator() {
 
 numsBtn.forEach((numBtn) => {
 
-    numBtn.addEventListener('click', (evt) => {
+    numBtn.addEventListener('click', () => {
+        console.log(numBtn.textContent)
+
+        sideInputScreen.textContent = sideInputScreen.textContent + numBtn.textContent
 
         let input = parseInt(numBtn.textContent)
 
@@ -91,12 +97,11 @@ function handleDivideOperation() {
     counter = 0;
 
 }
-document.querySelector('.calc__equal').addEventListener('click', () => {
+equalBtn.addEventListener('click', () => {
     handleDivideOperation()
-    resultImg.classList.add('giphy-embed_is-visible')
+    sideInputScreen.textContent = sideInputScreen.textContent + equalBtn.textContent + solution;
 
 })
-
 
 
 

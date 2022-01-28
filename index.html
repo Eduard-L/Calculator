@@ -10,17 +10,22 @@
 <body>
     <div class="page-wrapper">
     <header class="header">
-        <h1 class="header__title">My Calculator !</h1>
-       
+        <h1 class="header__title">...Calculator </h1>
+        <div class="pacman">
+            <div class="pacman__eye"></div>
+            <div class="pacman__mouth"></div>
+            <div class="pacman__food"></div>
+            
+           </div>
     </header>
-    <iframe src="https://giphy.com/embed/cIxxFKOTCPwX9DUk7L"  class="giphy-embed" allowFullScreen></iframe>
+   
 
     <main class="calc">
         <div class="calc__screen">
             <div class="calc__inputs"></div>
         </div>
         <button class="calc__delete ">C</button>
-        <button class="calc__backskape btn">←</button>
+        <button class="calc__backskape btn" disabled>←</button>
         <button class="calc__divide btn">÷</button>
         <button class="calc__seven btn">7</button>
         <button class="calc__eight btn">8</button>
@@ -36,7 +41,9 @@
         <button class="calc__plus btn">+</button>
         <button class="calc__zero btn">0</button>
         <button class="calc__equal">=</button>
+       
     </main>
+    <p class="calc__screen-for-allinputs"></p>
 </div>
 <script type="module" src="index.js" ></script>
 <script type="module" src='./Calculator.js'></script>
