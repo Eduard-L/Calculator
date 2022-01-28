@@ -286,4 +286,11 @@ button:nth-child(4n):hover {
 	margin-top: 10px;
 	font-size: 30px;
 	font-family: monospace;
+
+	word-wrap: break-word;
+}
+.operator_is-disabled {
+	pointer-events: none;
+	transform: scale(1);
+	opacity: 0.5;
 }
