@@ -7,6 +7,9 @@ const resultImg = document.querySelector('.giphy-embed')
 const sideInputScreen = document.querySelector('.calc__screen-for-allinputs');
 const equalBtn = document.querySelector('.calc__equal');
 const operators = document.querySelectorAll('.operator')
+const templateElement = document.querySelector('.history-element')
+const historyContainer = document.querySelector('.history');
+const zeroBtn = document.querySelector('.calc__zero')
 
 
 let operator = '';
@@ -14,6 +17,16 @@ let counter = 0
 let secondInput = 0;
 let firstInput = 0;
 let solution = 0;
+
+// function handleZerobtn() {
+//     if (calcInputs.textContent === '') {
+//         zeroBtn.classList.add('operator_is-disabled');
+//     }
+//     else {
+//         zeroBtn.classList.remove('operator_is-disabled');
+//     }
+// }
+// handleZerobtn();
 
 function handleStartOperation() {
 
@@ -86,11 +99,13 @@ numsBtn.forEach((numBtn) => {
                 console.log(secondInput, 'second')
 
 
+
             }
             else {
 
                 calcInputs.textContent += parseInt(input);
                 firstInput = parseInt(calcInputs.textContent)
+                // handleDivideOperation();
                 handleStartOperation();
                 console.log(firstInput, 'first')
             }
@@ -103,6 +118,7 @@ numsBtn.forEach((numBtn) => {
             console.log(operator)
             counter++
             console.log(counter)
+
 
         }
     })
@@ -142,9 +158,23 @@ function handleDivideOperation() {
 equalBtn.addEventListener('click', () => {
     handleDivideOperation()
     sideInputScreen.textContent = sideInputScreen.textContent + equalBtn.textContent + solution;
+    // sideInputScreen.textContent = solution;
+    const historyElement = templateElement.content.querySelector('.history__solution').cloneNode(true);
+    console.log(historyElement)
+    historyElement.textContent = sideInputScreen.textContent;
+    historyContainer.appendChild(historyElement)
+    sideInputScreen.textContent = solution
+
 
 })
 
+
+// todo list
+
+// handle zero when the screen is empty
+// handle operators when we click operator // or disable the operators or change the variabel
+// handle the solution // the solution cant be modified after we pres equal
+// handle solution so it will be appear when we click second operation for exapmle 1+1 and if we click to some operator again the user will see the solution in the screen 
 
 
 

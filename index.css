@@ -192,7 +192,7 @@ button:nth-child(4n):hover {
 	background: rgb(247, 243, 8);
 	border-radius: 50%;
 	top: 47%;
-	left: 80px;
+	left: 72px;
 	-webkit-animation-name: food;
 	animation-name: food;
 	-webkit-animation-duration: 0.7s;
@@ -281,16 +281,41 @@ button:nth-child(4n):hover {
 .calc__screen-for-allinputs {
 	width: 320px;
 	border-radius: 10px;
-	height: 100px;
+	min-height: 50px;
 	background-color: rgb(153, 116, 116);
 	margin-top: 10px;
 	font-size: 30px;
 	font-family: monospace;
-
 	word-wrap: break-word;
+	margin-bottom: 5px;
 }
 .operator_is-disabled {
 	pointer-events: none;
 	transform: scale(1);
 	opacity: 0.5;
+}
+.history {
+	width: 320px;
+	margin-top: 5px;
+	background-color: wheat;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	min-height: 200px;
+}
+.history__title {
+	margin-top: 5px;
+	margin-left: 5px;
+	font-style: italic;
+}
+.history__solution {
+	margin-top: 2px;
+	margin-bottom: 0px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Courier New', Courier, monospace;
+	margin-left: 5px;
+	list-style: square;
 }
