@@ -48,12 +48,13 @@ function cleanScreen() {
 function resetTheCalculator() {
     sideInputScreen.textContent = ''
     cleanScreen();
-    handleStartOperation();
+
     operator = '';
     counter = 0
     secondInput = 0;
     firstInput = 0;
     solution = 0;
+    handleStartOperation();
 }
 
 operators.forEach((operator) => {
