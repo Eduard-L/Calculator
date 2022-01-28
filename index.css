@@ -3,24 +3,47 @@
 .page-wrapper {
 	background-color: black;
 	height: 100vh;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 .header__title {
 	color: yellow;
 }
 .header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
 	flex-direction: row-reverse;
 }
 .calc__screen {
 	grid-area: screen;
 	color: black;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
 .calc__delete {
@@ -99,10 +122,16 @@ button {
 	border-radius: 10px;
 	background-color: white;
 	cursor: pointer;
+	-webkit-transition: 0.5s, -webkit-transform;
+	transition: 0.5s, -webkit-transform;
+	-o-transition: transform, 0.5s;
 	transition: transform, 0.5s;
+	transition: transform, 0.5s, -webkit-transform;
 }
 button:hover {
 	background-color: rgb(153, 82, 211);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
 	transform: scale(1.1);
 }
 button:nth-child(4n) {
@@ -116,6 +145,7 @@ button:nth-child(4n):hover {
 	font-size: 40px;
 	white-space: nowrap;
 	overflow: hidden;
+	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 }
 
@@ -146,9 +176,13 @@ button:nth-child(4n):hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
 	clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+	-webkit-animation-name: eat;
 	animation-name: eat;
+	-webkit-animation-duration: 0.7s;
 	animation-duration: 0.7s;
+	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
 .pacman__food {
@@ -159,38 +193,87 @@ button:nth-child(4n):hover {
 	border-radius: 50%;
 	top: 47%;
 	left: 80px;
+	-webkit-animation-name: food;
 	animation-name: food;
+	-webkit-animation-duration: 0.7s;
 	animation-duration: 0.7s;
+	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
 }
 
-@keyframes eat {
+@-webkit-keyframes eat {
 	0% {
+		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
 		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
 	}
 	25% {
+		-webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
 		clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
 	}
 
 	50% {
+		-webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
 		clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
 	}
 
 	75% {
+		-webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
 		clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
 	}
 
 	100% {
+		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
 		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+	}
+}
+
+@keyframes eat {
+	0% {
+		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+	}
+	25% {
+		-webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+		clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+	}
+
+	50% {
+		-webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+		clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+	}
+
+	75% {
+		-webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+		clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+	}
+
+	100% {
+		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+	}
+}
+
+@-webkit-keyframes food {
+	0% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translateX(-30px);
+		transform: translateX(-30px);
+		opacity: 0;
 	}
 }
 
 @keyframes food {
 	0% {
+		-webkit-transform: translateX(0);
 		transform: translateX(0);
 		opacity: 1;
 	}
 	100% {
+		-webkit-transform: translateX(-30px);
 		transform: translateX(-30px);
 		opacity: 0;
 	}
