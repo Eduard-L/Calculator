@@ -17,6 +17,7 @@ let counter = 0
 let secondInput = 0;
 let firstInput = 0;
 let solution = 0;
+let operatorCounter = 0;
 
 deleteHsrIcon.addEventListener('click', () => {
     historyContainer.innerHTML = ''
@@ -32,8 +33,6 @@ function handleEnableBtn(btn) {
     btn.disabled = false;
     btn.classList.remove('button_is-disabled');
 }
-
-
 
 function handleDisableBtns(butsArray) {
     butsArray.forEach((btn) => {
@@ -54,7 +53,6 @@ handleDisableBtn(equalBtn);
 
 cleanScreenBtn.addEventListener('click', resetTheCalculator);
 
-
 function cleanScreen() {
     calcInputs.textContent = '';
 
@@ -74,17 +72,18 @@ function resetTheCalculator() {
     handleDisableBtn(equalBtn)
 
 }
-
 operators.forEach((operator) => {
     operator.addEventListener('click', () => {
         if (counter === 1) {
+
             handleDivideOperation()
 
-            calcInputs.textContent = solution
+
         }
 
     })
 })
+
 ////
 
 allBtn.forEach((numBtn) => {
@@ -97,6 +96,7 @@ allBtn.forEach((numBtn) => {
         let input = parseInt(numBtn.textContent)
 
         if ((typeof (input) === 'number') && (!isNaN(input))) {
+
             if (counter === 1) {
 
                 calcInputs.textContent += parseInt(input);
@@ -104,6 +104,8 @@ allBtn.forEach((numBtn) => {
                 console.log(secondInput, 'second')
                 handleEnableBtns(operators)
                 handleEnableBtn(equalBtn);
+                console.log(counter);
+
 
 
 
@@ -115,6 +117,9 @@ allBtn.forEach((numBtn) => {
                 handleEnableBtns(operators)
                 handleEnableBtn(zeroBtn);
                 console.log(firstInput, 'first')
+                console.log(counter);
+
+
             }
 
         }
@@ -127,13 +132,15 @@ allBtn.forEach((numBtn) => {
             console.log(counter)
             handleDisableBtns(operators)
             handleEnableBtns(numsBtn)
+            console.log(counter);
+
+
+
 
 
         }
     })
 });
-
-
 
 
 
@@ -162,10 +169,16 @@ function handleDivideOperation() {
     firstInput = solution;
     secondInput = 0;
     counter = 0;
+
+
     handleDisableBtn(equalBtn);
 
 }
-equalBtn.addEventListener('click', () => {
+
+equalBtn.addEventListener('click', handlOperatorsClick)
+
+function handlOperatorsClick() {
+
     handleDivideOperation()
     sideInputScreen.textContent = sideInputScreen.textContent + equalBtn.textContent + solution;
     const historyElement = templateElement.content.querySelector('.history__solution').cloneNode(true);
@@ -175,13 +188,10 @@ equalBtn.addEventListener('click', () => {
     sideInputScreen.textContent = solution
     handleDisableBtns(numsBtn)
 
-
-})
+}
 
 
 // todo list
-
-// handle buttons when we click button // or disable the buttons or change the variabel
 
 // handle solution so it will be appear when we click second operation for exapmle 1+1 and if we click to some button again the user will see the solution in the screen 
 

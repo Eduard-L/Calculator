@@ -46,11 +46,12 @@
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
+	min-height: 40px;
 }
 .calc__delete {
-	grid-area: delete;
+	width: 75%;
 }
-.calc__backskape {
+/* .calc__backskape {
 	grid-area: backskape;
 }
 .calc__divide {
@@ -92,8 +93,9 @@
 .calc__plus {
 	grid-area: plus;
 }
+*/
 .calc__zero {
-	grid-area: zero;
+	width: 75%;
 }
 .calc__equal {
 	grid-area: equal;
@@ -106,15 +108,22 @@
 .calc {
 	background-color: wheat;
 	width: 320px;
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	/* display: grid;
 
 	grid-template-rows: 30px 40px repeat(5, 1fr);
 	grid-template-columns: repeat(4, 1fr);
-	border-radius: 10px;
+
 
 	grid-template-areas: "allInputs allInputs allInputs allInputs" "screen screen screen screen"
 		"delete delete backskape divide" "seven eight nine multi" "four five six minus" "one two three plus"
-		"zero zero zero equal";
+		"zero zero zero equal"; */
+}
+.calc__area {
+	display: flex;
+	flex-direction: row;
 }
 
 button {
@@ -129,6 +138,7 @@ button {
 	-o-transition: transform, 0.5s;
 	transition: transform, 0.5s;
 	transition: transform, 0.5s, -webkit-transform;
+	width: 25%;
 }
 button:hover {
 	background-color: rgb(153, 82, 211);
@@ -273,15 +283,15 @@ button:hover {
 	}
 }
 .calc__screen-for-allinputs {
+	border-radius: 10px;
 	width: 320px;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
 	background-color: rgb(153, 116, 116);
 	margin: 0px;
 	font-size: 20px;
 	font-family: monospace;
 	word-wrap: break-word;
-	grid-area: allInputs;
+	/* grid-area: allInputs; */
+	min-height: 30px;
 }
 .button_is-disabled {
 	pointer-events: none;
