@@ -2,7 +2,7 @@
 
 .page-wrapper {
 	background-color: black;
-	height: 100vh;
+	/* height: 100vh; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -104,15 +104,15 @@
 }
 .calc {
 	background-color: wheat;
-	height: 400px;
 	width: 320px;
 	display: grid;
-	grid-template-rows: repeat(6, 1fr);
+	grid-template-rows: 30px 40px repeat(5, 1fr);
 	grid-template-columns: repeat(4, 1fr);
 	border-radius: 10px;
 
-	grid-template-areas: "screen screen screen screen" "delete delete backskape divide" "seven eight nine multi"
-		"four five six minus" "one two three plus" "zero zero zero equal";
+	grid-template-areas: "allInputs allInputs allInputs allInputs" "screen screen screen screen"
+		"delete delete backskape divide" "seven eight nine multi" "four five six minus" "one two three plus"
+		"zero zero zero equal";
 }
 
 button {
@@ -134,13 +134,7 @@ button:hover {
 	-ms-transform: scale(1.1);
 	transform: scale(1.1);
 }
-button:nth-child(4n) {
-	background-color: coral;
-	color: white;
-}
-button:nth-child(4n):hover {
-	background-color: black;
-}
+
 .calc__inputs {
 	font-size: 40px;
 	white-space: nowrap;
@@ -280,16 +274,16 @@ button:nth-child(4n):hover {
 }
 .calc__screen-for-allinputs {
 	width: 320px;
-	border-radius: 10px;
-	min-height: 50px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 	background-color: rgb(153, 116, 116);
-	margin-top: 10px;
-	font-size: 30px;
+	margin: 0px;
+	font-size: 20px;
 	font-family: monospace;
 	word-wrap: break-word;
-	margin-bottom: 5px;
+	grid-area: allInputs;
 }
-.operator_is-disabled {
+.button_is-disabled {
 	pointer-events: none;
 	transform: scale(1);
 	opacity: 0.5;
@@ -297,13 +291,14 @@ button:nth-child(4n):hover {
 .history {
 	width: 320px;
 	margin-top: 5px;
-	background-color: wheat;
+	background-color: burlywood;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	min-height: 200px;
+	position: relative;
 }
 .history__title {
 	margin-top: 5px;
@@ -318,4 +313,25 @@ button:nth-child(4n):hover {
 	font-family: 'Courier New', Courier, monospace;
 	margin-left: 5px;
 	list-style: square;
+}
+.history__trash-icon {
+	all: unset;
+	background-image: url('./images/trash__icon.svg');
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 50%;
+	transition: background-color, 1s;
+}
+.history__trash-icon:hover {
+	background-color: black;
+}
+.history__solutions {
+	margin: 0px;
 }
