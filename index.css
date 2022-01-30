@@ -51,49 +51,7 @@
 .calc__delete {
 	width: 75%;
 }
-/* .calc__backskape {
-	grid-area: backskape;
-}
-.calc__divide {
-	grid-area: divide;
-}
-.calc__seven {
-	grid-area: seven;
-}
-.calc__eight {
-	grid-area: eight;
-}
-.calc__nine {
-	grid-area: nine;
-}
-.calc__multi {
-	grid-area: multi;
-}
-.calc__four {
-	grid-area: four;
-}
-.calc__five {
-	grid-area: five;
-}
-.calc__six {
-	grid-area: six;
-}
-.calc__minus {
-	grid-area: minus;
-}
-.calc__one {
-	grid-area: one;
-}
-.calc__two {
-	grid-area: two;
-}
-.calc__three {
-	grid-area: three;
-}
-.calc__plus {
-	grid-area: plus;
-}
-*/
+
 .calc__zero {
 	width: 75%;
 }
@@ -111,15 +69,6 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
-	/* display: grid;
-
-	grid-template-rows: 30px 40px repeat(5, 1fr);
-	grid-template-columns: repeat(4, 1fr);
-
-
-	grid-template-areas: "allInputs allInputs allInputs allInputs" "screen screen screen screen"
-		"delete delete backskape divide" "seven eight nine multi" "four five six minus" "one two three plus"
-		"zero zero zero equal"; */
 }
 .calc__area {
 	display: flex;
@@ -290,7 +239,6 @@ button:hover {
 	font-size: 20px;
 	font-family: monospace;
 	word-wrap: break-word;
-	/* grid-area: allInputs; */
 	min-height: 30px;
 }
 .button_is-disabled {
