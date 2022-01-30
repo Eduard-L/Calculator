@@ -76,7 +76,8 @@ operators.forEach((operator) => {
     operator.addEventListener('click', () => {
         if (counter === 1) {
 
-            handleDivideOperation()
+            // handleDivideOperation()
+            handlOperatorsClick();
 
 
         }
