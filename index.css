@@ -30,7 +30,6 @@
 	flex-direction: row-reverse;
 }
 .calc__screen {
-	grid-area: screen;
 	color: black;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -55,7 +54,6 @@
 	width: 75%;
 }
 .calc__equal {
-	grid-area: equal;
 	background-color: coral;
 	color: white;
 }
@@ -87,6 +85,9 @@
 button {
 	height: 67px;
 	font-size: 40px;
+	color: black;
+	padding: 0px;
+	margin: 0;
 	border: 1.5px solid black;
 	border-radius: 10px;
 	background-color: white;
