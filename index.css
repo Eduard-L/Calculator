@@ -1,5 +1,7 @@
 @import url(./vendor/normalize.css);
-
+html {
+	background-color: black;
+}
 .page-wrapper {
 	background-color: black;
 	/* height: 100vh; */
