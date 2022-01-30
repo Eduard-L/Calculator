@@ -1,357 +1,9 @@
-/* @import url(./vendor/normalize.css);
-.body {
-	background-color: black;
-}
-.page-wrapper {
-	background-color: black;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-.header__title {
-	color: yellow;
-}
-.header {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: reverse;
-	-ms-flex-direction: row-reverse;
-	flex-direction: row-reverse;
-}
-.calc__screen {
-	grid-area: screen;
-	color: black;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-}
-.calc__delete {
-	grid-area: delete;
-}
-.calc__backskape {
-	grid-area: backskape;
-}
-.calc__divide {
-	grid-area: divide;
-}
-.calc__seven {
-	grid-area: seven;
-}
-.calc__eight {
-	grid-area: eight;
-}
-.calc__nine {
-	grid-area: nine;
-}
-.calc__multi {
-	grid-area: multi;
-}
-.calc__four {
-	grid-area: four;
-}
-.calc__five {
-	grid-area: five;
-}
-.calc__six {
-	grid-area: six;
-}
-.calc__minus {
-	grid-area: minus;
-}
-.calc__one {
-	grid-area: one;
-}
-.calc__two {
-	grid-area: two;
-}
-.calc__three {
-	grid-area: three;
-}
-.calc__plus {
-	grid-area: plus;
-}
-.calc__zero {
-	grid-area: zero;
-}
-.calc__equal {
-	grid-area: equal;
-	background-color: coral;
-	color: white;
-}
-.calc__equal:hover {
-	background-color: red;
-}
-.calc {
-	background-color: wheat;
-	width: 320px;
-	display: grid;
-
-	grid-template-rows: 30px 40px repeat(5, 1fr);
-	grid-template-columns: repeat(4, 1fr);
-	border-radius: 10px;
-
-	grid-template-areas: "allInputs allInputs allInputs allInputs" "screen screen screen screen"
-		"delete delete backskape divide" "seven eight nine multi" "four five six minus" "one two three plus"
-		"zero zero zero equal";
-}
-
-
-button {
-	height: 67px;
-	font-size: 40px;
-	border: 1.5px solid black;
-	border-radius: 10px;
-	background-color: white;
-	cursor: pointer;
-	-webkit-transition: 0.5s, -webkit-transform;
-	transition: 0.5s, -webkit-transform;
-	-o-transition: transform, 0.5s;
-	transition: transform, 0.5s;
-	transition: transform, 0.5s, -webkit-transform;
-}
-button:hover {
-	background-color: rgb(153, 82, 211);
-	-webkit-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	transform: scale(1.1);
-}
-
-.calc__inputs {
-	font-size: 40px;
-	white-space: nowrap;
-	overflow: hidden;
-	-o-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-}
-
-
-.pacman {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: #f2d648;
-	position: relative;
-	margin-top: 20px;
-	margin-right: 30px;
-}
-
-.pacman__eye {
-	position: absolute;
-	width: 5px;
-	height: 5px;
-	background-color: red;
-	top: 10px;
-	right: 10px;
-	background: #333333;
-}
-
-.pacman__mouth {
-	background: #000;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	-webkit-animation-name: eat;
-	animation-name: eat;
-	-webkit-animation-duration: 0.7s;
-	animation-duration: 0.7s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-}
-.pacman__food {
-	position: absolute;
-	width: 7px;
-	height: 7px;
-	background: rgb(247, 243, 8);
-	border-radius: 50%;
-	top: 47%;
-	left: 72px;
-	-webkit-animation-name: food;
-	animation-name: food;
-	-webkit-animation-duration: 0.7s;
-	animation-duration: 0.7s;
-	-webkit-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes eat {
-	0% {
-		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	}
-	25% {
-		-webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
-		clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
-	}
-
-	50% {
-		-webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
-		clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
-	}
-
-	75% {
-		-webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
-		clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
-	}
-
-	100% {
-		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	}
-}
-
-@keyframes eat {
-	0% {
-		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	}
-	25% {
-		-webkit-clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
-		clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
-	}
-
-	50% {
-		-webkit-clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
-		clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
-	}
-
-	75% {
-		-webkit-clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
-		clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
-	}
-
-	100% {
-		-webkit-clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-		clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
-	}
-}
-
-@-webkit-keyframes food {
-	0% {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-		opacity: 1;
-	}
-	100% {
-		-webkit-transform: translateX(-30px);
-		transform: translateX(-30px);
-		opacity: 0;
-	}
-}
-
-@keyframes food {
-	0% {
-		-webkit-transform: translateX(0);
-		transform: translateX(0);
-		opacity: 1;
-	}
-	100% {
-		-webkit-transform: translateX(-30px);
-		transform: translateX(-30px);
-		opacity: 0;
-	}
-}
-.calc__screen-for-allinputs {
-	width: 320px;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-	background-color: rgb(153, 116, 116);
-	margin: 0px;
-	font-size: 20px;
-	font-family: monospace;
-	word-wrap: break-word;
-	grid-area: allInputs;
-}
-.button_is-disabled {
-	pointer-events: none;
-	transform: scale(1);
-	opacity: 0.5;
-}
-.history {
-	width: 320px;
-	margin-top: 5px;
-	background-color: burlywood;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-	min-height: 200px;
-	position: relative;
-}
-.history__title {
-	margin-top: 5px;
-	margin-left: 5px;
-	font-style: italic;
-}
-.history__solution {
-	margin-top: 2px;
-	margin-bottom: 0px;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: 'Courier New', Courier, monospace;
-	margin-left: 5px;
-	list-style: square;
-}
-.history__trash-icon {
-	all: unset;
-	background-image: url('./images/trash__icon.svg');
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	right: 10px;
-	top: 5px;
-	background-repeat: no-repeat;
-	background-position: center;
-	cursor: pointer;
-	background-color: transparent;
-	border-radius: 50%;
-	transition: background-color, 1s;
-}
-.history__trash-icon:hover {
-	background-color: black;
-}
-.history__solutions {
-	margin: 0px;
-}
-*/
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 4 version
-*/
-
 @import url(./vendor/normalize.css);
 .body {
 	background-color: black;
 }
 .page-wrapper {
 	background-color: black;
-	/* height: 100vh; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -379,9 +31,6 @@ button:hover {
 	flex-direction: row-reverse;
 }
 .calc__screen {
-	-ms-grid-row: 2;
-	-ms-grid-column: 1;
-	-ms-grid-column-span: 4;
 	grid-area: screen;
 	color: black;
 	display: -webkit-box;
@@ -399,90 +48,54 @@ button:hover {
 	justify-content: flex-start;
 }
 .calc__delete {
-	-ms-grid-row: 3;
-	-ms-grid-column: 1;
-	-ms-grid-column-span: 2;
 	grid-area: delete;
 }
 .calc__backskape {
-	-ms-grid-row: 3;
-	-ms-grid-column: 3;
 	grid-area: backskape;
 }
 .calc__divide {
-	-ms-grid-row: 3;
-	-ms-grid-column: 4;
 	grid-area: divide;
 }
 .calc__seven {
-	-ms-grid-row: 4;
-	-ms-grid-column: 1;
 	grid-area: seven;
 }
 .calc__eight {
-	-ms-grid-row: 4;
-	-ms-grid-column: 2;
 	grid-area: eight;
 }
 .calc__nine {
-	-ms-grid-row: 4;
-	-ms-grid-column: 3;
 	grid-area: nine;
 }
 .calc__multi {
-	-ms-grid-row: 4;
-	-ms-grid-column: 4;
 	grid-area: multi;
 }
 .calc__four {
-	-ms-grid-row: 5;
-	-ms-grid-column: 1;
 	grid-area: four;
 }
 .calc__five {
-	-ms-grid-row: 5;
-	-ms-grid-column: 2;
 	grid-area: five;
 }
 .calc__six {
-	-ms-grid-row: 5;
-	-ms-grid-column: 3;
 	grid-area: six;
 }
 .calc__minus {
-	-ms-grid-row: 5;
-	-ms-grid-column: 4;
 	grid-area: minus;
 }
 .calc__one {
-	-ms-grid-row: 6;
-	-ms-grid-column: 1;
 	grid-area: one;
 }
 .calc__two {
-	-ms-grid-row: 6;
-	-ms-grid-column: 2;
 	grid-area: two;
 }
 .calc__three {
-	-ms-grid-row: 6;
-	-ms-grid-column: 3;
 	grid-area: three;
 }
 .calc__plus {
-	-ms-grid-row: 6;
-	-ms-grid-column: 4;
 	grid-area: plus;
 }
 .calc__zero {
-	-ms-grid-row: 7;
-	-ms-grid-column: 1;
-	-ms-grid-column-span: 3;
 	grid-area: zero;
 }
 .calc__equal {
-	-ms-grid-row: 7;
-	-ms-grid-column: 4;
 	grid-area: equal;
 	background-color: coral;
 	color: white;
@@ -493,13 +106,9 @@ button:hover {
 .calc {
 	background-color: wheat;
 	width: 320px;
-	display: -ms-grid;
 	display: grid;
 
-	-ms-grid-rows: 30px 40px (1fr)[5];
-
 	grid-template-rows: 30px 40px repeat(5, 1fr);
-	-ms-grid-columns: (1fr)[4];
 	grid-template-columns: repeat(4, 1fr);
 	border-radius: 10px;
 
@@ -536,8 +145,6 @@ button:hover {
 	text-overflow: ellipsis;
 }
 
-/* .calc__screen-for-allinputs {
-} */
 .pacman {
 	width: 50px;
 	height: 50px;
@@ -666,9 +273,6 @@ button:hover {
 	}
 }
 .calc__screen-for-allinputs {
-	-ms-grid-row: 1;
-	-ms-grid-column: 1;
-	-ms-grid-column-span: 4;
 	width: 320px;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
