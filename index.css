@@ -72,7 +72,8 @@
 }
 .calc {
 	background-color: wheat;
-	min-width: 320px;
+	width: 320px;
+
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -253,7 +254,10 @@ button:hover {
 }
 .calc__screen-for-allinputs {
 	border-radius: 10px;
-
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
 	background-color: rgb(153, 116, 116);
 	margin: 0px;
 	font-size: 20px;
@@ -301,7 +305,9 @@ button:hover {
 	font-weight: bold;
 	font-family: 'Courier New', Courier, monospace;
 	margin-left: 5px;
-	list-style: square;
+	white-space: nowrap;
+	list-style: lower-greek;
+	width: 100%;
 }
 .history__trash-icon {
 	all: unset;
@@ -325,4 +331,6 @@ button:hover {
 }
 .history__solutions {
 	margin: 0px;
+
+	width: 100%;
 }
