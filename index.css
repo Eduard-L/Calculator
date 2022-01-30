@@ -29,6 +29,16 @@
 	-ms-flex-direction: row-reverse;
 	flex-direction: row-reverse;
 }
+.header__logo {
+	background-image: url('./images/calculator-svgrepo-com.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 30px;
+	height: 30px;
+	align-self: center;
+	margin-left: 10px;
+}
 .calc__screen {
 	color: black;
 	display: -webkit-box;
