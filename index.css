@@ -1,5 +1,5 @@
 @import url(./vendor/normalize.css);
-html {
+.body {
 	background-color: black;
 }
 .page-wrapper {
@@ -18,7 +18,6 @@ html {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	margin: auto;
 }
 .header__title {
 	color: yellow;
