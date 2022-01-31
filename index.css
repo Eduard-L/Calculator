@@ -57,7 +57,7 @@
 	min-height: 40px;
 }
 .calc__delete {
-	width: 75%;
+	width: 50%;
 }
 
 .calc__zero {
@@ -333,4 +333,10 @@ button:hover {
 	margin: 0px;
 
 	width: 100%;
+}
+.calc__area > .btn_type_operator {
+	background-color: coral;
+}
+.calc__area > .btn_type_operator:hover {
+	opacity: 0.5;
 }

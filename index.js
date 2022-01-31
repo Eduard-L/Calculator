@@ -1,3 +1,4 @@
+// variables
 const allBtn = document.querySelectorAll('.btn');
 const numsBtn = document.querySelectorAll('.btn_type_num');
 const calcInputs = document.querySelector('.calc__inputs');
@@ -11,7 +12,6 @@ const historyContainer = document.querySelector('.history__solutions');
 const zeroBtn = document.querySelector('.calc__zero');
 const deleteHsrIcon = document.querySelector('.history__trash-icon');
 
-
 let button = '';
 let counter = 0
 let secondInput = 0;
@@ -19,9 +19,7 @@ let firstInput = 0;
 let solution = 0;
 let operatorCounter = 0;
 
-deleteHsrIcon.addEventListener('click', () => {
-    historyContainer.innerHTML = ''
-})
+// handlers
 
 function handleDisableBtn(btn) {
 
@@ -47,11 +45,6 @@ function handleEnableBtns(butsArray) {
         btn.classList.remove('button_is-disabled');
     })
 }
-handleDisableBtns(operators);
-handleDisableBtn(zeroBtn);
-handleDisableBtn(equalBtn);
-
-cleanScreenBtn.addEventListener('click', resetTheCalculator);
 
 function cleanScreen() {
     calcInputs.textContent = '';
@@ -72,11 +65,73 @@ function resetTheCalculator() {
     handleDisableBtn(equalBtn)
 
 }
+
+function handleHistorySolution() {
+    const historyElement = templateElement.content.querySelector('.history__solution').cloneNode(true);
+    console.log(historyElement)
+    historyElement.textContent = sideInputScreen.textContent;
+    historyContainer.appendChild(historyElement)
+
+}
+
+function handlOperatorsClick() {
+
+    handleOperation()
+    sideInputScreen.textContent = sideInputScreen.textContent + equalBtn.textContent + solution;
+    handleHistorySolution()
+    sideInputScreen.textContent = solution
+    handleDisableBtns(numsBtn)
+
+}
+
+function handleOperation() {
+    if (button === '+') {
+
+        solution = firstInput + secondInput;
+        console.log(solution)
+        calcInputs.textContent = solution
+    }
+    if (button === 'x') {
+        solution = firstInput * secondInput;
+        console.log(solution)
+        calcInputs.textContent = solution
+    }
+    if (button === '÷') {
+        solution = firstInput / secondInput;
+        console.log(solution)
+        calcInputs.textContent = solution
+    }
+    if (button === '-') {
+        solution = firstInput - secondInput;
+        console.log(solution)
+        calcInputs.textContent = solution
+    }
+    firstInput = solution;
+    secondInput = 0;
+    counter = 0;
+
+
+    handleDisableBtn(equalBtn);
+
+}
+
+handleDisableBtns(operators);
+handleDisableBtn(zeroBtn);
+handleDisableBtn(equalBtn);
+
+// eventHandlers 
+
+cleanScreenBtn.addEventListener('click', resetTheCalculator);
+
+deleteHsrIcon.addEventListener('click', () => {
+    historyContainer.innerHTML = ''
+})
+
 operators.forEach((operator) => {
     operator.addEventListener('click', () => {
         if (counter === 1) {
 
-            // handleDivideOperation()
+
             handlOperatorsClick();
 
 
@@ -85,14 +140,12 @@ operators.forEach((operator) => {
     })
 })
 
-////
-
 allBtn.forEach((numBtn) => {
 
     numBtn.addEventListener('click', () => {
         console.log(numBtn.textContent)
 
-        sideInputScreen.textContent = sideInputScreen.textContent + numBtn.textContent
+        sideInputScreen.textContent += numBtn.textContent
 
         let input = parseInt(numBtn.textContent)
 
@@ -107,10 +160,8 @@ allBtn.forEach((numBtn) => {
                 handleEnableBtn(equalBtn);
                 console.log(counter);
 
-
-
-
             }
+
             else {
 
                 calcInputs.textContent += parseInt(input);
@@ -143,58 +194,12 @@ allBtn.forEach((numBtn) => {
     })
 });
 
-
-
-function handleDivideOperation() {
-    if (button === '+') {
-
-        solution = firstInput + secondInput;
-        console.log(solution)
-        calcInputs.textContent = solution
-    }
-    if (button === 'x') {
-        solution = firstInput * secondInput;
-        console.log(solution)
-        calcInputs.textContent = solution
-    }
-    if (button === '÷') {
-        solution = firstInput / secondInput;
-        console.log(solution)
-        calcInputs.textContent = solution
-    }
-    if (button === '-') {
-        solution = firstInput - secondInput;
-        console.log(solution)
-        calcInputs.textContent = solution
-    }
-    firstInput = solution;
-    secondInput = 0;
-    counter = 0;
-
-
-    handleDisableBtn(equalBtn);
-
-}
-
 equalBtn.addEventListener('click', handlOperatorsClick)
 
-function handlOperatorsClick() {
-
-    handleDivideOperation()
-    sideInputScreen.textContent = sideInputScreen.textContent + equalBtn.textContent + solution;
-    const historyElement = templateElement.content.querySelector('.history__solution').cloneNode(true);
-    console.log(historyElement)
-    historyElement.textContent = sideInputScreen.textContent;
-    historyContainer.appendChild(historyElement)
-    sideInputScreen.textContent = solution
-    handleDisableBtns(numsBtn)
-
-}
 
 
-// todo list
 
-// handle solution so it will be appear when we click second operation for exapmle 1+1 and if we click to some button again the user will see the solution in the screen 
+
 
 
 
