@@ -1,2 +1,7 @@
-# Calculator version 1.0.0 
-link--> https://eduard-l.github.io/Calculator/
+# Basic Calculator 
+
+## Descriptions
+* This calculator was maded by vanilla JS and vanilla CSS 
+* Users can see the history of his calculation and clear the history. 
+
+here is the [Link](https://eduard-l.github.io/Calculator/)
